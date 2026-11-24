@@ -20,6 +20,8 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Mock No Result Adapter
  */
@@ -37,8 +39,8 @@ require_once dirname(__FILE__) . '/_files/Db/MockHasResult.php';
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Validate
  */
+#[Group('Zend_Validate')]
 class Zend_Validate_Db_NoRecordExistsTest extends PHPUnit\Framework\TestCase
 {
 
@@ -214,10 +216,7 @@ class Zend_Validate_Db_NoRecordExistsTest extends PHPUnit\Framework\TestCase
         }
     }
 
-    /**
-     *
-     * @group ZF-10705
-     */
+    #[Group('ZF-10705')]
     public function testCreatesQueryBasedOnNamedOrPositionalAvailablity()
     {
         Zend_Db_Table_Abstract::setDefaultAdapter(null);
